@@ -64,7 +64,7 @@ const MENU_ITEMS: MenuItemTypes[] = [
 		key: 'amt-location',
 		label: 'АТМ-ийн байршил',
 		isTitle: true,
-		url: '/',
+		url: '/kiosk-map',
 	},
 	{
 		key: 'investor',
@@ -123,7 +123,7 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
 		key: 'amt-location',
 		label: 'АТМ-ийн байршил',
 		isTitle: true,
-		url: '/',
+		url: '/kiosk-map',
 	},
 	{
 		key: 'investor',

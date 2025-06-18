@@ -119,5 +119,45 @@
 		"forInvestor": "TPay for Investor",
 		"contact": "Contact",
 		"copyright": "© TPayMN. All rights reserved. Crafted by"
+	},
+	"kioskMap": {
+		"title": "TPay Kiosk Locations",
+		"subtitle": "Locations of TPay kiosk devices across Mongolia",
+		"loading": "Loading map...",
+		"error": "An error occurred",
+		"errorDescription": "Failed to load device information",
+		"retryButton": "Try Again",
+		"statistics": {
+			"total": "Total",
+			"online": "Online",
+			"offline": "Offline"
+		},
+		"legend": {
+			"title": "Legend",
+			"onlineKiosk": "Online Kiosk",
+			"offlineKiosk": "Offline Kiosk"
+		},
+		"deviceModal": {
+			"status": "Status:",
+			"address": "Address:",
+			"code": "Code:",
+			"workingHours": "Working Hours:",
+			"region": "Region:",
+			"loanPayment": "Loan Payment",
+			"loanTaking": "Loan Taking",
+			"available": "✓ Available",
+			"unavailable": "✗ Unavailable",
+			"close": "Close",
+			"getDirections": "Get Directions",
+			"inactive": "Inactive",
+			"online": "Online",
+			"offline": "Offline",
+			"noWorkingHours": "Working 24 hours",
+			"notWorking": "Not working",
+			"noInfo": "No information"
+		},
+		"infoWindow": {
+			"viewDetails": "View Details"
+		}
 	}
 }

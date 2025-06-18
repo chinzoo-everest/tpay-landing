@@ -55,6 +55,9 @@ const HelpPage = React.lazy(() => import('../pages/other/Help'))
 const Dashboard = React.lazy(() => import('../pages/other/Dashboard'))
 const Setting = React.lazy(() => import('../pages/other/Setting'))
 
+// Kiosk Map
+const KioskMapPage = React.lazy(() => import('../pages/KioskMap'))
+
 export interface RoutesProps {
 	path: RouteProps['path']
 	name?: string
@@ -204,6 +207,11 @@ const uiRoutes: RoutesProps[] = [
 		path: '/contact-us',
 		name: 'Contact us',
 		element: <ContactPage />,
+	},
+	{
+		path: '/kiosk-map',
+		name: 'Kiosk Map',
+		element: <KioskMapPage />,
 	},
 ]
 

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { getHorizontalMenuItems, getMenuItems } from '../helpers/menu'
 import AppMenu from './Menu'
 import { useEffect } from 'react'
@@ -16,10 +16,12 @@ import { OffcanvasLayout } from '@/components'
 const Navbar = () => {
 	const [isOpenOffcanvas, toggleOffcanvas, closeOffcanvas] = useToggle(false)
 	const { t } = useTranslation()
+	const location = useLocation()
 
 	const { settings } = useThemeContext()
 
 	const topNavLight = settings.topbar.theme === 'light'
+	const isKioskMapPage = location.pathname === '/kiosk-map'
 
 	useEffect(() => {
 		const navbar = document.getElementById('navbar')
@@ -38,7 +40,9 @@ const Navbar = () => {
 				id="navbar"
 				className={`${
 					topNavLight ? 'light' : 'dark'
-				} fixed top-0 inset-x-0 flex items-center z-40 w-full lg:bg-transparent bg-white transition-all py-5`}
+				} fixed top-0 inset-x-0 flex items-center z-40 w-full ${
+					isKioskMapPage ? 'bg-white' : 'lg:bg-transparent bg-white'
+				} transition-all py-5`}
 			>
 				<div className="container">
 					<nav className="flex items-center">

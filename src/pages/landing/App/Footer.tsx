@@ -52,7 +52,7 @@ const Footer = () => {
 										<Link to="">{t('footer.additionalServices')}</Link>
 									</div>
 									<div className="text-gray-500/80">
-										<Link to="">{t('footer.atmLocations')}</Link>
+										<Link to="/kiosk-map">{t('footer.atmLocations')}</Link>
 									</div>
 									<div className="text-gray-500/80">
 										<Link to="">{t('footer.forInvestor')}</Link>

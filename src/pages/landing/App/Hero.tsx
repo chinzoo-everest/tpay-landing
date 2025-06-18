@@ -41,7 +41,7 @@ const Hero = () => {
 
 						<div className="flex flex-col sm:flex-row sm:items-center mt-10 lg:mt-12 gap-4 sm:gap-6">
 							<Link
-								to=""
+								to="/kiosk-map"
 								className="inline-flex items-center justify-center py-4 px-8 rounded-lg text-white bg-primary hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 focus:outline focus:outline-primary/50 transition-all duration-300 text-base font-semibold"
 							>
 								{t('hero.viewOnMap')}
