@@ -3,6 +3,7 @@ import useViewPort from './useViewPort'
 import useToggle from './useToggle'
 import useModal from './useModal'
 import useOutsideClick from './useClickOutside'
+import useI18n from './useI18n'
 
 import useLogoTheme from './useLogoTheme'
 
@@ -12,5 +13,6 @@ export {
 	useToggle,
 	useModal,
 	useLogoTheme,
-	useOutsideClick
+	useOutsideClick,
+	useI18n,
 }

@@ -4,13 +4,46 @@ import {
 	MenuItemTypes,
 } from '../constants/menu'
 
-const getMenuItems = () => {
-	// NOTE - You can fetch from server and return here as well
-	return MENU_ITEMS
+const getMenuItems = (t?: any) => {
+	if (!t) return MENU_ITEMS
+
+	return MENU_ITEMS.map((item) => ({
+		...item,
+		label: getMenuLabel(item.key, t),
+		children: item.children?.map((child) => ({
+			...child,
+			label: getMenuLabel(child.key, t),
+		})),
+	}))
 }
-const getHorizontalMenuItems = () => {
-	// NOTE - You can fetch from server and return here as well
-	return HORIZONTAL_MENU_ITEMS
+
+const getHorizontalMenuItems = (t?: any) => {
+	if (!t) return HORIZONTAL_MENU_ITEMS
+
+	return HORIZONTAL_MENU_ITEMS.map((item) => ({
+		...item,
+		label: getMenuLabel(item.key, t),
+		children: item.children?.map((child) => ({
+			...child,
+			label: getMenuLabel(child.key, t),
+		})),
+	}))
+}
+
+const getMenuLabel = (key: string, t: any): string => {
+	const menuKeys: Record<string, string> = {
+		product: t('menu.products'),
+		atm: t('menu.atmLoan'),
+		woow: t('menu.purchaseLoan'),
+		additional: t('menu.additionalServices'),
+		merchant: t('menu.merchant'),
+		'merchant-request': t('menu.merchantRequest'),
+		merchants: t('menu.merchants'),
+		'amt-location': t('menu.atmLocations'),
+		investor: t('menu.investor'),
+	}
+
+	return menuKeys[key] || key
 }
 
 const findAllParent = (
@@ -29,27 +62,26 @@ const findAllParent = (
 	return parents
 }
 
-
-export const getMenuItemFromURL = (items: MenuItemTypes | MenuItemTypes[], url: string): MenuItemTypes|undefined => {
-	if(items instanceof Array){
-		for (const item of items){
-			const foundItem = getMenuItemFromURL(item, url);	
-			if(foundItem){
-				return foundItem;
+export const getMenuItemFromURL = (
+	items: MenuItemTypes | MenuItemTypes[],
+	url: string
+): MenuItemTypes | undefined => {
+	if (items instanceof Array) {
+		for (const item of items) {
+			const foundItem = getMenuItemFromURL(item, url)
+			if (foundItem) {
+				return foundItem
 			}
 		}
-	}else{
-		if(items.url == url)
-			return items;		
-		if(items.children!=null){
+	} else {
+		if (items.url == url) return items
+		if (items.children != null) {
 			for (const item of items.children) {
-				if(item.url == url)
-					return item;
+				if (item.url == url) return item
 			}
 		}
 	}
 }
-
 
 const findMenuItem = (
 	menuItems: MenuItemTypes[] | undefined,

@@ -1,6 +1,10 @@
 //images
-import app1 from '@/assets/images/features/app3.png'
-import app2 from '@/assets/images/features/app4.png'
+// import app1 from '@/assets/images/features/app3.png'
+// import app2 from '@/assets/images/features/app4.png'
+
+import tpay3 from '@/assets/images/tpay/tpay3.jpg'
+import tpay5 from '@/assets/images/tpay/tpay5.png'
+import tpay2 from '@/assets/images/tpay/tpay2.jpg'
 
 import { Feature, Feature2 } from './types'
 
@@ -131,25 +135,25 @@ const features: Feature[] = [
 
 const features2: Feature2[] = [
 	{
-		image: app2,
+		image: tpay3,
 		shapes: ['bg-pink-600 bottom-8', 'bg-yellow-300 top-32 end-12'],
-		title: 'Quick Access to Tasks',
+		title: 'Зээлийн төлөлт сунгалт хийх​',
 		description:
-			'Save time and edit like a pro! Yes! you will be able to edit your application on the easy way.',
+			'Tpay зээлийн АТМ-ээс авсан зээлийнхээ төлөлт, сунгалтыг хийх боломжтой.​',
 	},
 	{
-		image: app1,
+		image: tpay5,
 		shapes: ['bg-red-400 bottom-8', 'bg-green-400 top-24 end-16'],
-		title: 'Create Task Easily',
+		title: 'Cashback дүнгээ хянах',
 		description:
-			'Speedy App provides instant information on thousands of hire and buy products.',
+			'Зээлийнхээ хугацааг бүрэн ашиглаад буцаан олголтоо хуримтлуулаад бэлэн мөнгөөр аваарай',
 	},
 	{
-		image: app2,
+		image: tpay2,
 		shapes: ['bg-purple-600 bottom-8 end-0', 'bg-orange-400 top-60'],
-		title: 'Quick Access to Team',
+		title: 'Нэмэлт цэсүүд',
 		description:
-			'Save time and edit like a pro! Yes! you will be able to edit your application on the easy way.',
+			'Зээлийн тодорхойлолт, И-баримт бүртгэл холбох, АТМ байршил, ажиллах цагийн хуваарийн мэдээлэл',
 	},
 ]
 

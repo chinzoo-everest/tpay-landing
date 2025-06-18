@@ -1,7 +1,9 @@
 import { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 
 //images
-import app2 from '@/assets/images/features/app2.png'
+// import app2 from '@/assets/images/features/app2.png'
+import tpay4 from '@/assets/images/tpay/tpay4.png'
 
 type Feature = {
 	icon: ReactNode
@@ -38,10 +40,9 @@ const features: Feature[] = [
 				</g>{' '}
 			</svg>
 		),
-		title: 'First feature',
+		title: 'Одоо ав',
 		variant: 'bg-blue-100',
-		description:
-			'We use a customized application tobe specifically designed a testing gnose to keep away for people.',
+		description: 'Ердөө хэдхэн хоромд таны бүх хэрэгцээг шийднэ',
 	},
 	{
 		icon: (
@@ -70,10 +71,9 @@ const features: Feature[] = [
 				</g>{' '}
 			</svg>
 		),
-		title: 'Second feature',
+		title: 'Дараа төл',
 		variant: 'bg-green-100',
-		description:
-			'In order to design a mobile app that is going to be module downloaded and accessed frequently by users.',
+		description: 'Сонгосон хугацаанд 7 удаа хүртэл хүүгүй хуваан төлөх',
 	},
 	{
 		icon: (
@@ -108,10 +108,9 @@ const features: Feature[] = [
 				</g>{' '}
 			</svg>
 		),
-		title: 'Third feature',
+		title: 'Урамшуулал',
 		variant: 'bg-orange-50',
-		description:
-			'A Private Limited is the most popular type of partnership Malta. The limited liabilityis',
+		description: 'Хугацаандаа төлөөд худалдан авалтын эрхээ нэмэх',
 	},
 	{
 		icon: (
@@ -142,27 +141,54 @@ const features: Feature[] = [
 				</g>{' '}
 			</svg>
 		),
-		title: 'Fourth feature',
+		title: 'Уян хатан',
 		variant: 'bg-teal-100',
-		description:
-			"Few derived into talking being in merit long you'd his the of to had the to duties, it them one…",
+		description: 'Хугацаагаа өөрөө сонгоод хүүгүй шимтгэлгүй төлөх​',
 	},
 ]
 
 const Features1 = () => {
+	const { t } = useTranslation()
+
+	const featuresData: Feature[] = [
+		{
+			icon: features[0].icon,
+			title: t('features1.takeNow.title'),
+			variant: 'bg-blue-100',
+			description: t('features1.takeNow.description'),
+		},
+		{
+			icon: features[1].icon,
+			title: t('features1.payLater.title'),
+			variant: 'bg-green-100',
+			description: t('features1.payLater.description'),
+		},
+		{
+			icon: features[2].icon,
+			title: t('features1.reward.title'),
+			variant: 'bg-orange-50',
+			description: t('features1.reward.description'),
+		},
+		{
+			icon: features[3].icon,
+			title: t('features1.flexible.title'),
+			variant: 'bg-teal-100',
+			description: t('features1.flexible.description'),
+		},
+	]
+
 	return (
 		<section className="py-20">
 			<div className="container">
 				<div className="text-center">
 					<span className="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">
-						Features
+						{t('features1.badge')}
 					</span>
 					<h2 className="md:text-3xl text-xl font-semibold my-5">
-						App works best with Prompt
+						{t('features1.title')}
 					</h2>
 					<p className="text-slate-500">
-						Start working with <span className="text-primary">Prompt</span> to
-						showcase your app to thousands of people.
+						<span className="text-primary">{t('features1.subtitle')} </span>
 					</p>
 				</div>
 
@@ -173,7 +199,7 @@ const Features1 = () => {
 							<div className="after:absolute after:-z-10 after:w-full after:h-full after:bg-[url('@/assets/images/pattern/dot4.svg')]"></div>
 						</div>
 						<img
-							src={app2}
+							src={tpay4}
 							className="lg:w-full w-1/2 mx-auto"
 							data-aos="zoom-in-right"
 						/>
@@ -181,7 +207,7 @@ const Features1 = () => {
 
 					<div className="lg:col-span-2">
 						<div className="grid sm:grid-cols-2 grid-cols-1 gap-7 lg:ps-32">
-							{(features || []).map((item, idx) => {
+							{(featuresData || []).map((item, idx) => {
 								return (
 									<div key={idx}>
 										<span

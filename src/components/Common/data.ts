@@ -1,12 +1,8 @@
 import { PlanItem } from './types'
-import avatar1 from '@/assets/images/avatars/img-1.jpg'
-import avatar2 from '@/assets/images/avatars/img-2.jpg'
 
 interface Testimonials {
-	name: string
-	position: string
+	question: string
 	description: string
-	image: string
 }
 
 interface AccordionData {
@@ -16,32 +12,34 @@ interface AccordionData {
 
 const testimonials: Testimonials[] = [
 	{
-		name: 'John Stark',
-		position: 'Engineering Director',
+		question: 'Яаж зээл авах уу?​',
 		description:
-			'Have been working with CSS for over ten years and Tailwind just makes my life easier. It is still CSS and you use flex, grid, etc. but just quicker to write and maintain.',
-		image: avatar1,
+			'Та манай АТМ дээр өөрийн иргэний үнэмлэхтэйгээ очоорой.​Хэрэв зааварчилгаа авахыг хүсвэл АТМ-н харилцуурыг ашиглан ажилтантай холбогдох эсвэл ​77767776 руу залгаарай​',
 	},
 	{
-		name: 'Cersei Lannister',
-		position: 'Senior Project Manager',
-		description:
-			'I was bad at front-end until I discovered with Tailwind CSS. I have learnt a lot more about design and CSS itself after I started working with Tailwind. Creating web pages is 5x faster now.',
-		image: avatar2,
+		question: 'Tpay application-д яаж бүртгүүлэх үү?​​',
+		description: 'Бүртгүүлэх зааврыг TPayMN хуудсаас аваарай',
 	},
 	{
-		name: 'John Stark',
-		position: 'Engineering Director',
-		description:
-			'Have been working with CSS for over ten years and Tailwind just makes my life easier. It is still CSS and you use flex, grid, etc. but just quicker to write and maintain.',
-		image: avatar1,
+		question: 'Миний төлөлт орсон байна уу?​',
+		description: 'Та манай апп-г татаснаар төлөлт сунгалтаа харах боломжтой',
 	},
 	{
-		name: 'Cersei Lannister',
-		position: 'Senior Project Manager',
+		question: 'Надад дахин зээл гарах боломж байна уу​',
+		description: 'Таны хугацаа хэтрээгүй бол зээл хэвийн гарна​',
+	},
+	{
+		question: 'Танай зээл хэдээс эхэлдэг вэ?​',
 		description:
-			'I was bad at front-end until I discovered with Tailwind CSS. I have learnt a lot more about design and CSS itself after I started working with Tailwind. Creating web pages is 5x faster now.',
-		image: avatar2,
+			'Манай зээл таны мэдээлэл дээр үндэслэж эрхийн тогтоодог байгаа',
+	},
+	{
+		question: 'Хамгийн дээд тал нь хэд хүртэл гардаг вэ?',
+		description: '510,000 хүртэл зээл гардаг',
+	},
+	{
+		question: 'Сунгалт хийж болох уу?',
+		description: 'Болно. Авсан дүнгээсээ хамаарч сунгалтаа хийдэг байгаа',
 	},
 ]
 

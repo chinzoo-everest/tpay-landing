@@ -3,20 +3,21 @@ import { getHorizontalMenuItems, getMenuItems } from '../helpers/menu'
 import AppMenu from './Menu'
 import { useEffect } from 'react'
 import { useThemeContext } from '@/context'
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 //images
-import logoLight from '@/assets/images/logo-light.png'
 import logoDark from '@/assets/images/logo-dark.png'
-import { useLogoTheme, useToggle } from '@/hooks'
+import tpayLogo from '@/assets/images/tpay-horizontal.svg'
+import { useToggle } from '@/hooks'
 import VerticalMenu from './VerticalMenu'
 import { OffcanvasLayout } from '@/components'
 
 const Navbar = () => {
-	const [isOpenOffcanvas, toggleOffcanvas, openOffcanvas, closeOffcanvas] =
-		useToggle(false)
+	const [isOpenOffcanvas, toggleOffcanvas, closeOffcanvas] = useToggle(false)
+	const { t } = useTranslation()
 
 	const { settings } = useThemeContext()
-	const { isDark } = useLogoTheme()
 
 	const topNavLight = settings.topbar.theme === 'light'
 
@@ -42,19 +43,16 @@ const Navbar = () => {
 				<div className="container">
 					<nav className="flex items-center">
 						<Link to="/">
-							<img
-								src={isDark ? logoDark : logoLight}
-								className="h-8"
-								alt="Logo"
-							/>
+							<img src={tpayLogo} className="h-11" alt="Logo" />
 						</Link>
 						<div className="lg:block hidden ms-auto">
-							<AppMenu menuItems={getHorizontalMenuItems()} />
+							<AppMenu menuItems={getHorizontalMenuItems(t)} />
 						</div>
-						<div className="hidden lg:flex items-center ms-3">
-							<button className="bg-primary text-white px-4 py-2 rounded inline-flex items-center text-sm">
-								Download
-							</button>
+						<div className="hidden lg:flex items-center ms-3 gap-2">
+							<LanguageSwitcher />
+							{/* <button className="bg-primary text-white px-4 py-2 rounded inline-flex items-center text-sm">
+								{t('common.download')}
+							</button> */}
 						</div>
 						<div className="lg:hidden flex items-center ms-auto px-2.5">
 							<button type="button" onClick={toggleOffcanvas}>
@@ -81,15 +79,15 @@ const Navbar = () => {
 						</button>
 					</div>
 					{/* Mobile Menu Link List */}
-					<div className="p-6 overflow-scroll h-full" id='right-menu'>
-						<VerticalMenu menuItems={getMenuItems()} />
+					<div className="p-6 overflow-scroll h-full" id="right-menu">
+						<VerticalMenu menuItems={getMenuItems(t)} />
 					</div>
 					{/* Mobile Menu Download Button (Footer) */}
-					<div className="p-6 flex items-center justify-center">
+					{/* <div className="p-6 flex items-center justify-center">
 						<button className="bg-primary w-full text-white p-3 rounded flex items-center justify-center text-sm">
-							Download
+							{t('common.download')}
 						</button>
-					</div>
+					</div> */}
 				</div>
 			</OffcanvasLayout>
 		</>

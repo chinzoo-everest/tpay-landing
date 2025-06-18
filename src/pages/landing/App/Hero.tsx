@@ -1,53 +1,67 @@
 import { Link } from 'react-router-dom'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useTranslation } from 'react-i18next'
 
 // styles
 import 'swiper/css'
 
-//images
-import avatar1 from '@/assets/images/avatars/img-1.jpg'
-import avatar2 from '@/assets/images/avatars/img-2.jpg'
-import app1 from '@/assets/images/hero/app1.png'
+import atm from '@/assets/images/tpay/atm.png'
 
 const Hero = () => {
+	const { t } = useTranslation()
+
 	return (
 		<section className="pt-36 pb-24 bg-primary/5">
 			<div className="container">
 				<div className="grid lg:grid-cols-6 grid-cols-1 justify-between items-center gap-6">
 					<div className="lg:col-span-3">
-						<h2 className="md:text-5xl/tight text-3xl font-semibold mb-7">
-							The best way to{' '}
-							<span className="relative after:bg-amber-400/60 after:h-6 after:w-full after:inset-x-0 after:bottom-0 after:absolute after:-z-10">
-								Showcase
-							</span>{' '}
-							your Mobile App
-						</h2>
-						<p className="text-slate-400 leading-7">
-							To increase sales by skyrocketing communication with All messages
-							in one simple dashboard it now takes seconds.
+						<div className="space-y-6">
+							<h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+								{t('hero.title')}
+								<br />
+								<span className="relative inline-block mt-2">
+									<span className="relative z-10 text-xl sm:text-2xl lg:text-3xl xl:text-4xl bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent font-extrabold">
+										{t('hero.subtitle')}
+									</span>
+									<svg
+										className="absolute bottom-0 left-0 w-full h-3 text-primary/20"
+										viewBox="0 0 200 12"
+										fill="currentColor"
+										preserveAspectRatio="none"
+									>
+										<path d="M0,6 C50,12 100,0 150,6 C175,9 190,3 200,6 L200,12 L0,12 Z" />
+									</svg>
+								</span>
+							</h1>
+						</div>
+						<p className="text-slate-600 leading-relaxed text-base sm:text-lg lg:text-xl mt-6 max-w-2xl">
+							{t('hero.description')}
 						</p>
 
-						<div className="flex flex-wrap items-center mt-16 gap-6">
+						<div className="flex flex-col sm:flex-row sm:items-center mt-10 lg:mt-12 gap-4 sm:gap-6">
 							<Link
 								to=""
-								className="py-3 px-6 rounded text-white bg-primary hover:shadow-lg hover:shadow-primary/50 focus:outline focus:outline-primary/50"
+								className="inline-flex items-center justify-center py-4 px-8 rounded-lg text-white bg-primary hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 focus:outline focus:outline-primary/50 transition-all duration-300 text-base font-semibold"
 							>
-								Download
+								{t('hero.viewOnMap')}
 							</Link>
-							<Link to="" className="flex items-center gap-2">
-								<span className="flex items-center justify-center rounded-full w-10 h-10 bg-primary/10 text-primary hover:border hover:border-primary/20 hover:bg-primary/20">
-									<i className="fa-solid fa-play"></i>
+							<Link
+								to="https://youtu.be/Ew3uBTCYhRk"
+								className="flex items-center gap-3 text-gray-700 hover:text-primary transition-colors duration-300"
+							>
+								<span className="flex items-center justify-center rounded-full w-12 h-12 bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all duration-300">
+									<i className="fa-solid fa-play text-sm"></i>
 								</span>
-								<p className="font-medium text-primary hover:text-primary/90">
-									Watch Video
+								<p className="font-semibold text-base">
+									{t('hero.howToGuide')}
 								</p>
 							</Link>
 						</div>
 					</div>
 					<div className="lg:col-start-5 lg:col-span-2">
 						<div className="relative">
-							<img src={app1} alt="img" />
+							<img src={atm} alt="img" />
 
 							<div className="hidden lg:block">
 								{/* <!-- Swiper --> */}
@@ -62,40 +76,54 @@ const Hero = () => {
 											spaceBetween={30}
 											loop
 										>
-											{([avatar1, avatar2] || []).map((image, idx) => {
-												return (
-													<SwiperSlide key={idx}>
-														<div className="relative">
-															<div className="p-4 rounded-md bg-white relative">
-																<div className="flex items-center gap-5">
-																	<img
-																		src={image}
-																		className="w-12 rounded-full"
-																	/>
-																	<div>
-																		<h2 className="text-sm text-slate-400">
-																			Very convenient to use project manager!
-																		</h2>
-																		<p className="mt-2">
-																			<span className="flex gap-1 items-center text-yellow-500 text-base">
-																				<i className="fa-solid fa-star" />
-																				<i className="fa-solid fa-star" />
-																				<i className="fa-solid fa-star" />
-																				<i className="fa-solid fa-star" />
-																			</span>
-																		</p>
-																	</div>
-																</div>
-																{idx % 2 === 0 && (
-																	<div className="absolute end-1 bottom-0">
-																		<i className="fa-solid fa-quote-right text-2xl text-orange-500/20" />
-																	</div>
-																)}
+											<SwiperSlide>
+												<div className="relative">
+													<div className="p-4 rounded-md bg-white relative">
+														<div className="flex items-center gap-5">
+															<div>
+																<p className="">
+																	<span className="flex gap-1 items-center text-yellow-500 text-base">
+																		<i className="fa-solid fa-star" />
+																		<i className="fa-solid fa-star" />
+																		<i className="fa-solid fa-star" />
+																		<i className="fa-solid fa-star" />
+																	</span>
+																</p>
+																<h2 className="text-sm mt-2 text-slate-400">
+																	{t('hero.testimonial1')}
+																</h2>
 															</div>
 														</div>
-													</SwiperSlide>
-												)
-											})}
+														<div className="absolute end-1 bottom-0">
+															<i className="fa-solid fa-quote-right text-2xl text-orange-500/20" />
+														</div>
+													</div>
+												</div>
+											</SwiperSlide>
+											<SwiperSlide>
+												<div className="relative">
+													<div className="p-4 rounded-md bg-white relative">
+														<div className="flex items-center gap-5">
+															<div>
+																<p className="">
+																	<span className="flex gap-1 items-center text-yellow-500 text-base">
+																		<i className="fa-solid fa-star" />
+																		<i className="fa-solid fa-star" />
+																		<i className="fa-solid fa-star" />
+																		<i className="fa-solid fa-star" />
+																	</span>
+																</p>
+																<h2 className="text-sm mt-2 text-slate-400">
+																	{t('hero.testimonial2')}
+																</h2>
+															</div>
+														</div>
+														<div className="absolute end-1 bottom-0">
+															<i className="fa-solid fa-quote-right text-2xl text-orange-500/20" />
+														</div>
+													</div>
+												</div>
+											</SwiperSlide>{' '}
 										</Swiper>
 									</div>
 								</div>

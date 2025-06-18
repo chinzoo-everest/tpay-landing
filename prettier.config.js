@@ -5,6 +5,6 @@ const config = {
   trailingComma: "es5",
   useTabs: true,
   tabWidth: 2,
-  arrowParens:"always",
+  arrowParens: "always",
 };
 export default config;

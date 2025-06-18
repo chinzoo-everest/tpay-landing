@@ -1,0 +1,123 @@
+{
+	"common": {
+		"download": "Download",
+		"pleasant": "Pleasant",
+		"fast": "Fast",
+		"simple": "Simple"
+	},
+	"navigation": {
+		"home": "Home",
+		"about": "About Us",
+		"services": "Services",
+		"contact": "Contact"
+	},
+	"hero": {
+		"title": "TPay Loan ATM",
+		"subtitle": "Pleasant, Fast, Simple",
+		"description": "Available at the most locations...",
+		"viewOnMap": "View on Map",
+		"howToGuide": "How to Get a Loan",
+		"testimonial1": "Increase your loan limit twice a month...",
+		"testimonial2": "Pay on time and get cashback..."
+	},
+	"features1": {
+		"badge": "Pleasant, Fast, Simple",
+		"title": "Woow Purchase Loan",
+		"subtitle": "Fulfill your needs",
+		"takeNow": {
+			"title": "Take Now",
+			"description": "Solve all your needs in just a few minutes"
+		},
+		"payLater": {
+			"title": "Pay Later",
+			"description": "Pay in up to 7 installments with no interest for selected period"
+		},
+		"reward": {
+			"title": "Rewards",
+			"description": "Pay on time and increase your purchase limit"
+		},
+		"flexible": {
+			"title": "Flexible",
+			"description": "Choose your own payment period with no interest or fees"
+		}
+	},
+	"features2": {
+		"badge": "Pleasant, Fast, Simple",
+		"title": "TPay Loan App",
+		"feature1": {
+			"title": "Loan Payment Extension",
+			"description": "You can make payments and extensions for loans taken from TPay loan ATMs."
+		},
+		"feature2": {
+			"title": "Check Your Cashback",
+			"description": "Use your loan period fully and accumulate cashback to receive it in cash"
+		},
+		"feature3": {
+			"title": "Additional Features",
+			"description": "Loan details, receipt registration, ATM locations, and operating hours information"
+		}
+	},
+	"testimonial": {
+		"title": "Frequently Asked Questions",
+		"startChat": "Start Chat",
+		"faqs": [
+			{
+				"question": "How to get a loan?",
+				"answer": "Visit our ATM with your national ID card. If you need guidance, contact our staff via ATM communication or call 77767776"
+			},
+			{
+				"question": "How to register on TPay application?",
+				"answer": "Get registration instructions from TPayMN page"
+			},
+			{
+				"question": "Has my payment been processed?",
+				"answer": "You can check your payment extensions by downloading our app"
+			},
+			{
+				"question": "Can I get another loan?",
+				"answer": "If your term hasn't expired, you can get a loan normally"
+			},
+			{
+				"question": "What is your starting loan amount?",
+				"answer": "Our loans are determined based on your information and credit limit"
+			},
+			{
+				"question": "What is the maximum loan amount?",
+				"answer": "Loans up to 510,000 are available"
+			},
+			{
+				"question": "Can I extend the loan?",
+				"answer": "Yes. Extensions are made depending on the amount taken"
+			}
+		]
+	},
+	"menu": {
+		"products": "Products",
+		"atmLoan": "TPAY Loan ATM",
+		"purchaseLoan": "WOOW Purchase Loan",
+		"additionalServices": "Additional Services",
+		"merchant": "Merchant",
+		"merchantRequest": "Apply as Merchant",
+		"merchants": "Merchants",
+		"atmLocations": "ATM Locations",
+		"investor": "TPay for Investor"
+	},
+	"footer": {
+		"address": "Mongolia, Ulaanbaatar, Sukhbaatar District, 11th Khoroo, Nogoon Nuur Street, Pro One Office",
+		"workingHours": "Monday-Friday:",
+		"workingTime": "09:00-18:00",
+		"weekend": "Saturday, Sunday: Closed",
+		"products": "Products",
+		"atmLoan": "TPAY Loan ATM",
+		"purchaseLoan": "WOOW Purchase Loan",
+		"merchant": "Merchant",
+		"merchantRequest": "Apply as Merchant",
+		"merchants": "Merchants",
+		"other": "Other",
+		"additionalServices": "Additional Services",
+		"atmLocations": "ATM Locations",
+		"forInvestor": "TPay for Investor",
+		"contact": "Contact",
+		"copyright": "© TPayMN. All rights reserved. Crafted by"
+	}
+}

@@ -1,26 +1,21 @@
 import { Autoplay, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { testimonials } from './data'
+import { useTranslation } from 'react-i18next'
 
 //images
 import whiteWave from '@/assets/images/shapes/white-wave.svg'
+import { Link } from 'react-router-dom'
 
 interface TestimonialProps {
-	name: string
-	position: string
+	question: string
 	description: string
-	image: string
 }
-const CommonSlide = ({
-	name,
-	position,
-	description,
-	image,
-}: TestimonialProps) => {
+const CommonSlide = ({ question, description }: TestimonialProps) => {
 	return (
 		<div className="p-10 bg-white">
-			<p className="text-slate-800">{description}</p>
-			<div className="flex items-center justify-between mt-5">
+			<p className="text-slate-800 text-lg">{question}</p>
+			<p className="text-slate-800/8 mt-2">{description}</p>
+			{/* <div className="flex items-center justify-between mt-5">
 				<div className="flex items-center gap-3">
 					<div>
 						<img src={image} className="w-10 rounded-full" />
@@ -39,11 +34,17 @@ const CommonSlide = ({
 						<i className="fa-solid fa-star"></i>
 					</span>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	)
 }
 const Testimonial = () => {
+	const { t } = useTranslation()
+	const testimonials = t('testimonial.faqs', { returnObjects: true }) as Array<{
+		question: string
+		answer: string
+	}>
+
 	return (
 		<>
 			<section
@@ -57,13 +58,18 @@ const Testimonial = () => {
 				<div className="container relative">
 					<div className="relative z-20">
 						<div className="flex items-center justify-between pb-14">
-							<div>
-								<span className="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">
+							<div className="flex items-center gap-5">
+								{/* <span className="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">
 									Testimonials
-								</span>
+								</span> */}
 								<h2 className="md:text-3xl text-xl font-semibold my-5">
-									What people say
+									{t('testimonial.title')}
 								</h2>
+								<Link to="https://www.facebook.com/TpayMNG">
+									<button className="px-4 py-2 bg-primary text-white rounded">
+										{t('testimonial.startChat')}
+									</button>
+								</Link>
 							</div>
 							<div className="flex items-center gap-5">
 								<div className="button-prev swiper-custom-prev cursor-pointer">
@@ -101,10 +107,8 @@ const Testimonial = () => {
 										return (
 											<SwiperSlide key={idx}>
 												<CommonSlide
-													name={item.name}
-													description={item.description}
-													image={item.image}
-													position={item.position}
+													question={item.question}
+													description={item.answer}
 												/>
 											</SwiperSlide>
 										)
