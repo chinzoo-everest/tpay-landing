@@ -40,9 +40,7 @@ const Navbar = () => {
 				id="navbar"
 				className={`${
 					topNavLight ? 'light' : 'dark'
-				} fixed top-0 inset-x-0 flex items-center z-40 w-full ${
-					isKioskMapPage ? 'bg-white' : 'lg:bg-transparent bg-white'
-				} transition-all py-5`}
+				} fixed top-0 inset-x-0 flex items-center z-40 w-full ${'bg-white'} transition-all py-5`}
 			>
 				<div className="container">
 					<nav className="flex items-center">

@@ -6,14 +6,13 @@ Email: support@coderthemes.com
 File: style Css File
 */
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 // Custom
-@import "custom/reboot";
-@import "custom/helper";
-@import "custom/navbar";
-@import "custom/gallery";
-@import "custom/aos";
+@import 'custom/reboot';
+@import 'custom/helper';
+@import 'custom/navbar';
+@import 'custom/gallery';
+@import 'custom/aos';

@@ -5,218 +5,215 @@ import { useTranslation } from 'react-i18next'
 // import app2 from '@/assets/images/features/app2.png'
 import tpay4 from '@/assets/images/tpay/tpay4.png'
 
-type Feature = {
-	icon: ReactNode
-	title: string
-	variant: string
-	description: string
-}
+// Import Figma icons
+import TakeNowIcon from '@/assets/images/figma/take-now-icon.svg'
+import PayLaterIcon from '@/assets/images/figma/pay-later-icon.svg'
+import RewardIcon from '@/assets/images/figma/reward-icon.svg'
+import FlexibleIcon from '@/assets/images/figma/flexible-icon.svg'
 
-const features: Feature[] = [
-	{
-		icon: (
-			<svg
-				className="w-6 h-6 text-primary"
-				viewBox="0 0 24 24"
-				version="1.1"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlnsXlink="http://www.w3.org/1999/xlink"
-			>
-				{' '}
-				<g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-					{' '}
-					<rect id="bound" x="0" y="0" width="24" height="24"></rect>{' '}
-					<path
-						d="M6,2 L18,2 C18.5522847,2 19,2.44771525 19,3 L19,12 C19,12.5522847 18.5522847,13 18,13 L6,13 C5.44771525,13 5,12.5522847 5,12 L5,3 C5,2.44771525 5.44771525,2 6,2 Z M7.5,5 C7.22385763,5 7,5.22385763 7,5.5 C7,5.77614237 7.22385763,6 7.5,6 L13.5,6 C13.7761424,6 14,5.77614237 14,5.5 C14,5.22385763 13.7761424,5 13.5,5 L7.5,5 Z M7.5,7 C7.22385763,7 7,7.22385763 7,7.5 C7,7.77614237 7.22385763,8 7.5,8 L10.5,8 C10.7761424,8 11,7.77614237 11,7.5 C11,7.22385763 10.7761424,7 10.5,7 L7.5,7 Z"
-						id="Combined-Shape"
-						fill="currentcolor"
-						opacity="0.3"
-					></path>{' '}
-					<path
-						d="M3.79274528,6.57253826 L12,12.5 L20.2072547,6.57253826 C20.4311176,6.4108595 20.7436609,6.46126971 20.9053396,6.68513259 C20.9668779,6.77033951 21,6.87277228 21,6.97787787 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,6.97787787 C3,6.70173549 3.22385763,6.47787787 3.5,6.47787787 C3.60510559,6.47787787 3.70753836,6.51099993 3.79274528,6.57253826 Z"
-						id="Combined-Shape"
-						fill="currentcolor "
-					></path>{' '}
-				</g>{' '}
-			</svg>
-		),
-		title: 'Одоо ав',
-		variant: 'bg-blue-100',
-		description: 'Ердөө хэдхэн хоромд таны бүх хэрэгцээг шийднэ',
-	},
-	{
-		icon: (
-			<svg
-				className="w-6 h-6 text-green-500"
-				viewBox="0 0 24 24"
-				version="1.1"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlnsXlink="http://www.w3.org/1999/xlink"
-			>
-				{' '}
-				<g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-					{' '}
-					<rect id="bound" x="0" y="0" width="24" height="24"></rect>{' '}
-					<path
-						d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z"
-						id="Path-50"
-						fill="currentcolor "
-						opacity="0.3"
-					></path>{' '}
-					<path
-						d="M11.1750002,14.75 C10.9354169,14.75 10.6958335,14.6541667 10.5041669,14.4625 L8.58750019,12.5458333 C8.20416686,12.1625 8.20416686,11.5875 8.58750019,11.2041667 C8.97083352,10.8208333 9.59375019,10.8208333 9.92916686,11.2041667 L11.1750002,12.45 L14.3375002,9.2875 C14.7208335,8.90416667 15.2958335,8.90416667 15.6791669,9.2875 C16.0625002,9.67083333 16.0625002,10.2458333 15.6791669,10.6291667 L11.8458335,14.4625 C11.6541669,14.6541667 11.4145835,14.75 11.1750002,14.75 Z"
-						fill="currentcolor "
-						id="check-path"
-					></path>{' '}
-				</g>{' '}
-			</svg>
-		),
-		title: 'Дараа төл',
-		variant: 'bg-green-100',
-		description: 'Сонгосон хугацаанд 7 удаа хүртэл хүүгүй хуваан төлөх',
-	},
-	{
-		icon: (
-			<svg
-				className="w-6 h-6 text-orange-500"
-				viewBox="0 0 24 24"
-				version="1.1"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlnsXlink="http://www.w3.org/1999/xlink"
-			>
-				{' '}
-				<g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-					{' '}
-					<rect
-						id="Rectangle-10"
-						x="0"
-						y="0"
-						width="24"
-						height="24"
-					></rect>{' '}
-					<path
-						d="M16.3740377,19.9389434 L22.2226499,11.1660251 C22.4524142,10.8213786 22.3592838,10.3557266 22.0146373,10.1259623 C21.8914367,10.0438285 21.7466809,10 21.5986122,10 L17,10 L17,4.47708173 C17,4.06286817 16.6642136,3.72708173 16.25,3.72708173 C15.9992351,3.72708173 15.7650616,3.85240758 15.6259623,4.06105658 L9.7773501,12.8339749 C9.54758575,13.1786214 9.64071616,13.6442734 9.98536267,13.8740377 C10.1085633,13.9561715 10.2533191,14 10.4013878,14 L15,14 L15,19.5229183 C15,19.9371318 15.3357864,20.2729183 15.75,20.2729183 C16.0007649,20.2729183 16.2349384,20.1475924 16.3740377,19.9389434 Z"
-						id="Path-3"
-						fill="currentcolor"
-					></path>{' '}
-					<path
-						d="M4.5,5 L9.5,5 C10.3284271,5 11,5.67157288 11,6.5 C11,7.32842712 10.3284271,8 9.5,8 L4.5,8 C3.67157288,8 3,7.32842712 3,6.5 C3,5.67157288 3.67157288,5 4.5,5 Z M4.5,17 L9.5,17 C10.3284271,17 11,17.6715729 11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L4.5,20 C3.67157288,20 3,19.3284271 3,18.5 C3,17.6715729 3.67157288,17 4.5,17 Z M2.5,11 L6.5,11 C7.32842712,11 8,11.6715729 8,12.5 C8,13.3284271 7.32842712,14 6.5,14 L2.5,14 C1.67157288,14 1,13.3284271 1,12.5 C1,11.6715729 1.67157288,11 2.5,11 Z"
-						id="Combined-Shape"
-						fill="currentcolor"
-						opacity="0.3"
-					></path>{' '}
-				</g>{' '}
-			</svg>
-		),
-		title: 'Урамшуулал',
-		variant: 'bg-orange-50',
-		description: 'Хугацаандаа төлөөд худалдан авалтын эрхээ нэмэх',
-	},
-	{
-		icon: (
-			<svg
-				className="w-6 h-6 text-teal-500"
-				viewBox="0 0 24 24"
-				version="1.1"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlnsXlink="http://www.w3.org/1999/xlink"
-			>
-				{' '}
-				<g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-					{' '}
-					<rect id="bound" x="0" y="0" width="24" height="24"></rect>{' '}
-					<path
-						d="M13.2070325,4 C13.0721672,4.47683179 13,4.97998812 13,5.5 C13,8.53756612 15.4624339,11 18.5,11 C19.0200119,11 19.5231682,10.9278328 20,10.7929675 L20,17 C20,18.6568542 18.6568542,20 17,20 L7,20 C5.34314575,20 4,18.6568542 4,17 L4,7 C4,5.34314575 5.34314575,4 7,4 L13.2070325,4 Z"
-						id="Combined-Shape"
-						fill="currentcolor "
-					></path>{' '}
-					<circle
-						id="Oval"
-						opacity="0.3"
-						cx="18.5"
-						cy="5.5"
-						r="2.5"
-						fill="currentcolor "
-					></circle>{' '}
-				</g>{' '}
-			</svg>
-		),
-		title: 'Уян хатан',
-		variant: 'bg-teal-100',
-		description: 'Хугацаагаа өөрөө сонгоод хүүгүй шимтгэлгүй төлөх​',
-	},
-]
+type Feature = {
+	icon: string
+	title: string
+	borderRadius: string
+	description: string
+	position: string
+	alignment: {
+		container: string
+		text: string
+		icon: string
+	}
+}
 
 const Features1 = () => {
 	const { t } = useTranslation()
 
 	const featuresData: Feature[] = [
 		{
-			icon: features[0].icon,
+			icon: TakeNowIcon,
 			title: t('features1.takeNow.title'),
-			variant: 'bg-blue-100',
+			borderRadius:
+				'rounded-tl-[200px] rounded-tr-[200px] rounded-bl-[200px] rounded-br-[0px]',
 			description: t('features1.takeNow.description'),
+			position: 'top-left',
+			alignment: {
+				container: 'items-start justify-start text-left',
+				text: 'text-left',
+				icon: 'justify-start',
+			},
 		},
 		{
-			icon: features[1].icon,
+			icon: PayLaterIcon,
 			title: t('features1.payLater.title'),
-			variant: 'bg-green-100',
+			borderRadius:
+				'rounded-tl-[200px] rounded-tr-[200px] rounded-bl-[0px] rounded-br-[200px]',
 			description: t('features1.payLater.description'),
+			position: 'top-right',
+			alignment: {
+				container: 'items-end justify-end text-right',
+				text: 'text-right',
+				icon: 'justify-end',
+			},
 		},
 		{
-			icon: features[2].icon,
+			icon: RewardIcon,
 			title: t('features1.reward.title'),
-			variant: 'bg-orange-50',
+			borderRadius:
+				'rounded-tl-[200px] rounded-tr-[0px] rounded-bl-[200px] rounded-br-[200px]',
 			description: t('features1.reward.description'),
+			position: 'bottom-left',
+			alignment: {
+				container: 'items-start justify-end text-left',
+				text: 'text-left',
+				icon: 'justify-start',
+			},
 		},
 		{
-			icon: features[3].icon,
+			icon: FlexibleIcon,
 			title: t('features1.flexible.title'),
-			variant: 'bg-teal-100',
+			borderRadius:
+				'rounded-tl-[0px] rounded-tr-[200px] rounded-bl-[200px] rounded-br-[200px]',
 			description: t('features1.flexible.description'),
+			position: 'bottom-right',
+			alignment: {
+				container: 'items-end justify-end text-right',
+				text: 'text-right',
+				icon: 'justify-end',
+			},
 		},
 	]
 
 	return (
-		<section className="py-20">
-			<div className="container">
-				<div className="text-center">
-					<span className="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">
-						{t('features1.badge')}
-					</span>
-					<h2 className="md:text-3xl text-xl font-semibold my-5">
+		<section className="py-20 relative overflow-hidden">
+			{/* Background Pattern */}
+			<div className="absolute inset-0 opacity-10">
+				<div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+				<div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+			</div>
+
+			<div className="container relative">
+				<div className="text-center flex flex-col items-center mb-16">
+					<div className="flex gap-2 mb-4">
+						<span className="text-sm font-medium px-4 rounded-lg text-primary border-2 border-primary inline-block">
+							{t('features1.badge.pleasent')}
+						</span>
+						<span className="text-sm font-medium px-4 rounded-lg text-primary border-2 border-primary inline-block">
+							{t('features1.badge.fast')}
+						</span>
+						<span className="text-sm font-medium px-4 rounded-lg text-primary border-2 border-primary inline-block">
+							{t('features1.badge.simple')}
+						</span>
+					</div>
+
+					<h3 className="text-xl uppercase md:text-3xl font-bold text-gray-900 mb-6">
 						{t('features1.title')}
-					</h2>
-					<p className="text-slate-500">
-						<span className="text-primary">{t('features1.subtitle')} </span>
-					</p>
+					</h3>
+					<div className="flex mx-auto justify-center px-8 py-1 bg-gradient-to-r from-blue-500 to-blue-800  rounded-full">
+						<p className="text-lg  max-w-2xl mx-auto">
+							<span className="text-white font-semibold italic">
+								{t('features1.subtitle')}{' '}
+							</span>
+						</p>
+					</div>
 				</div>
 
-				<div className="grid lg:grid-cols-3 grid-cols-1 items-center gap-6 mt-5">
-					<div className="relative">
-						<div className="hidden md:block">
-							<div className="absolute lg:w-9/12 h-3/5 w-72 -z-10 rotate-[20deg] rounded-3xl bg-orange-400/10 end-44  bottom-12 lg:end-10"></div>
-							<div className="after:absolute after:-z-10 after:w-full after:h-full after:bg-[url('@/assets/images/pattern/dot4.svg')]"></div>
-						</div>
+				<div className="grid lg:grid-cols-5 gap-8 items-center">
+					{/* Left Image Section */}
+					<div className="lg:col-span-2 relative">
 						<img
 							src={tpay4}
-							className="lg:w-full w-1/2 mx-auto"
+							className="lg:w-full w-3/4 mx-auto drop-shadow-2xl"
 							data-aos="zoom-in-right"
+							alt="TPay Features"
 						/>
 					</div>
 
-					<div className="lg:col-span-2">
-						<div className="grid sm:grid-cols-2 grid-cols-1 gap-7 lg:ps-32">
+					{/* Right Features Grid - Flower Layout */}
+					<div className="lg:col-span-3 relative">
+						{/* Background Gradient Rectangle from Figma */}
+						<div className="absolute inset-0 w-full h-full rounded-[100px] bg-gradient-to-r from-[#1272CF] to-[#1917ae] opacity-80 blur-3xl transform scale-95"></div>
+
+						<div className="relative grid grid-cols-2 gap-4 max-w-2xl mx-auto">
 							{(featuresData || []).map((item, idx) => {
 								return (
-									<div key={idx}>
-										<span
-											className={`flex items-center justify-center rounded-md w-12 h-12 ${item.variant}`}
+									<div
+										key={idx}
+										className={`group relative ${item.borderRadius} bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:bg-white/15 min-h-[320px] md:min-h-[350px] overflow-hidden`}
+										style={{
+											backdropFilter: 'blur(30px)',
+											WebkitBackdropFilter: 'blur(30px)',
+										}}
+										data-aos="fade-up"
+										data-aos-delay={idx * 100}
+									>
+										{/* Glass Effect Overlay */}
+										<div
+											className={`absolute inset-0 bg-gradient-to-br from-white/20 via-white/5 to-transparent opacity-50 ${item.borderRadius}`}
+										></div>
+
+										{/* Content Container with Specific Alignment */}
+										<div
+											className={`relative z-10 h-full justify-end flex flex-col ${item.alignment.container} py-8 px-8 md:px-16`}
 										>
-											{item.icon}
-										</span>
-										<h4 className="text-base mt-6 mb-3">{item.title}</h4>
-										<p className="text-slate-500">{item.description}</p>
+											{/* Icon Container */}
+											<div
+												className={`flex ${item.alignment.icon} mb-4 ${
+													idx === 2 || idx === 3 ? 'mt-10' : 'mt-8'
+												}`}
+											>
+												<div className="w-16 h-16 flex items-center justify-center bg-white/10 rounded-full backdrop-blur-sm">
+													<img
+														src={item.icon}
+														alt={item.title}
+														className="w-10 h-10 filter drop-shadow-lg"
+													/>
+												</div>
+											</div>
+
+											{/* Title */}
+											<h4
+												className={`text-lg font-bold text-white mb-3 uppercase tracking-wide drop-shadow-lg ${item.alignment.text}`}
+											>
+												{item.title}
+											</h4>
+
+											{/* Description */}
+											<p
+												className={`text-white/90 leading-relaxed text-sm drop-shadow-md flex-1 ${item.alignment.text}`}
+											>
+												{item.description}
+											</p>
+										</div>
+
+										{/* Position-specific Decorative Elements */}
+										{item.position === 'top-left' && (
+											<>
+												<div className="absolute top-4 left-4 w-3 h-3 bg-white/30 rounded-full blur-sm"></div>
+												<div className="absolute top-8 left-8 w-1 h-1 bg-white/20 rounded-full blur-sm"></div>
+											</>
+										)}
+										{item.position === 'top-right' && (
+											<>
+												<div className="absolute top-4 right-4 w-3 h-3 bg-white/30 rounded-full blur-sm"></div>
+												<div className="absolute top-8 right-8 w-1 h-1 bg-white/20 rounded-full blur-sm"></div>
+											</>
+										)}
+										{item.position === 'bottom-left' && (
+											<>
+												<div className="absolute bottom-4 left-4 w-3 h-3 bg-white/30 rounded-full blur-sm"></div>
+												<div className="absolute bottom-8 left-8 w-1 h-1 bg-white/20 rounded-full blur-sm"></div>
+											</>
+										)}
+										{item.position === 'bottom-right' && (
+											<>
+												<div className="absolute bottom-4 right-4 w-3 h-3 bg-white/30 rounded-full blur-sm"></div>
+												<div className="absolute bottom-8 right-8 w-1 h-1 bg-white/20 rounded-full blur-sm"></div>
+											</>
+										)}
+
+										{/* Hover Glow Effect */}
+										<div
+											className={`absolute inset-0 ${item.borderRadius} bg-gradient-to-br from-blue-400/20 via-purple-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+										></div>
 									</div>
 								)
 							})}

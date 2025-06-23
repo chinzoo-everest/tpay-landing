@@ -21,7 +21,11 @@
 		"testimonial2": "Pay on time and get cashback..."
 	},
 	"features1": {
-		"badge": "Pleasant, Fast, Simple",
+		"badge": {
+			"pleasent": "Pleasant",
+			"fast": "Fast",
+			"simple": "Simple"
+		},
 		"title": "Woow Purchase Loan",
 		"subtitle": "Fulfill your needs",
 		"takeNow": {
