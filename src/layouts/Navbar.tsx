@@ -67,7 +67,7 @@ const Navbar = () => {
 			</header>
 			<OffcanvasLayout
 				placement="end"
-				sizeClassName="w-[447px] bg-white border-s"
+				sizeClassName="w-[347px] bg-white border-s"
 				open={isOpenOffcanvas}
 				toggleOffcanvas={closeOffcanvas}
 			>
