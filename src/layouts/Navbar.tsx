@@ -75,23 +75,28 @@ const Navbar = () => {
 					{/* Mobile Menu Topbar Logo (Header) */}
 					<div className="p-6 flex items-center justify-between">
 						<Link to="/">
-							<img src={logoDark} className="h-8" alt="Logo" />
+							<img src={tpayLogo} className="h-8" alt="Logo" />
 						</Link>
-						<button className="flex items-center px-2" onClick={closeOffcanvas}>
-							<i className="fa-solid fa-xmark text-xl" />
-						</button>
+						<div className="flex items-center gap-2">
+							<LanguageSwitcher />
+							<button
+								className="flex items-center px-2"
+								onClick={closeOffcanvas}
+							>
+								<i className="fa-solid fa-xmark text-xl" />
+							</button>
+						</div>
 					</div>
 					{/* Mobile Menu Link List */}
 					<div className="p-6 overflow-scroll h-full" id="right-menu">
 						<VerticalMenu menuItems={getMenuItems(t)} />
-					</div>
-					{/* Mobile Menu Download Button (Footer) */}
-					<div className="p-6 flex items-center justify-center">
-						<LanguageSwitcher />
-						<button className="bg-primary w-full text-white p-3 rounded flex items-center justify-center text-sm">
+
+						<button className="bg-primary w-full mt-5 text-white p-3 rounded flex items-center justify-center text-sm">
 							{t('menu.investor')}
 						</button>
 					</div>
+					{/* Mobile Menu Download Button (Footer) */}
+					<div className="p-6 flex items-start justify-center"></div>
 				</div>
 			</OffcanvasLayout>
 		</>

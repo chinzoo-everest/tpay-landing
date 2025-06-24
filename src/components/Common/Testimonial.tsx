@@ -63,21 +63,21 @@ const Testimonial = () => {
 				</div>
 				<div className="container relative">
 					<div className="relative z-20">
-						<div className="flex items-center justify-between pb-14">
-							<div className="flex items-center gap-5">
+						<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-14 gap-4">
+							<div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
 								{/* <span className="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">
 									Testimonials
 								</span> */}
-								<h2 className="md:text-3xl text-xl font-semibold my-5">
+								<h2 className="md:text-3xl text-xl font-semibold">
 									{t('testimonial.title')}
 								</h2>
 								<Link to="https://www.facebook.com/TpayMNG">
-									<button className="px-4 py-2 bg-primary text-white rounded">
+									<button className="px-4 py-2 bg-primary text-white rounded w-fit">
 										{t('testimonial.startChat')}
 									</button>
 								</Link>
 							</div>
-							<div className="flex items-center gap-5">
+							<div className="flex items-center gap-5 justify-start sm:justify-end">
 								<div className="button-prev swiper-custom-prev cursor-pointer">
 									<i className="fa-solid fa-arrow-left"></i>
 								</div>
@@ -101,12 +101,20 @@ const Testimonial = () => {
 										delay: 2500,
 										disableOnInteraction: false,
 									}}
-									slidesPerView={2}
+									slidesPerView={1}
 									spaceBetween={30}
 									loop
 									navigation={{
 										nextEl: '.swiper-custom-next',
 										prevEl: '.swiper-custom-prev',
+									}}
+									breakpoints={{
+										768: {
+											slidesPerView: 2,
+										},
+										1024: {
+											slidesPerView: 2,
+										},
 									}}
 								>
 									{(testimonials || []).map((item, idx) => {

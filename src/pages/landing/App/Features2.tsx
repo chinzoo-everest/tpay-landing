@@ -66,7 +66,7 @@ const Features2 = () => {
 								data-aos-duration={300}
 							>
 								<h3 className="text-xl">{item.title}</h3>
-								<p className="mt-3">{item.description}</p>
+								<p className="mt-1 h-14">{item.description}</p>
 								<div className="pt-5">
 									<img src={item.image} />
 								</div>
