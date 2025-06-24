@@ -12,7 +12,11 @@ import { Link, useLocation } from 'react-router-dom'
 import { MenuItemTypes } from '@/constants/menu'
 
 // helpers
-import { findAllParent, findMenuItem, getMenuItemFromURL } from '../helpers/menu'
+import {
+	findAllParent,
+	findMenuItem,
+	getMenuItemFromURL,
+} from '../helpers/menu'
 
 // hooks
 import { useLogoTheme } from '@/hooks'
@@ -51,14 +55,15 @@ const MenuItemWithChildren = ({
 			<>
 				<Link
 					to=""
-					className={`nav-link flex justify-between ${activeMenuItems!.includes(item['key']) ? 'active' : ''
-						}`}
+					className={`nav-link flex justify-between ${
+						activeMenuItems!.includes(item['key']) ? 'active' : ''
+					}`}
 					aria-expanded={open}
 					onClick={toggleMenuItem}
 					data-menu-key={item['key']}
 					style={{ color: item.isTitle && !isDark ? '#f3f4f6' : '' }}
 				>
-					<span className="menu-text"> {item.label}</span>
+					<span className="menu-text text-xs"> {item.label}</span>
 					{!item.badge && (
 						<span className="fa-solid fa-angle-down ms-2 align-middle" />
 					)}
@@ -72,11 +77,12 @@ const MenuItemWithChildren = ({
 		<PopoverLayout
 			toggler={<PopoverToggle />}
 			placement={item.parentKey ? 'right-start' : 'bottom-start'}
-			togglerClass={`w-full nav-item after:absolute hover:after:-bottom-10 after:inset-0`}
+			togglerClass={`w-full nav-item after:absolute hover:after:inset-0`}
 		>
 			<ul
-				className={`nav-link ${open ? 'active' : ''
-					} origin-center -mt-0 transition-all bg-white rounded-lg shadow-lg border p-2 w-48 space-y-1.5 absolute`}
+				className={`nav-link ${
+					open ? 'active' : ''
+				} origin-center -mt-0 transition-all bg-white rounded-lg shadow-lg border p-2 w-48 space-y-1.5 absolute`}
 			>
 				{(item.children || []).map((child, idx) => {
 					return (
@@ -87,13 +93,17 @@ const MenuItemWithChildren = ({
 									toggleMenu={toggleMenu}
 									activeMenuItems={activeMenuItems}
 									subMenuClassNames="sub-menu"
-									linkClassName={activeMenuItems!.includes(child.key) ? 'active' : ''}
+									linkClassName={
+										activeMenuItems!.includes(child.key) ? 'active' : ''
+									}
 								/>
 							) : (
 								<MenuItem
 									item={child}
 									className={'nav-item'}
-									linkClassName={activeMenuItems!.includes(child.key) ? 'active' : ''}
+									linkClassName={
+										activeMenuItems!.includes(child.key) ? 'active' : ''
+									}
 								/>
 							)}
 						</React.Fragment>
@@ -128,10 +138,12 @@ const MenuItemLink = ({ item, className }: SubMenus) => {
 					<span className="bg-blue-600/10 flex justify-center items-center w-8 h-8 shadow rounded me-3">
 						{item.icon}
 					</span>
-					<div className="flex-grow-1">{item.label}</div>
+					<div className="flex-grow-1 text-xs">{item.label}</div>
 				</div>
 			) : (
-				<div className="flex flex-wrap justify-between">{item.label}</div>
+				<div className="flex flex-wrap justify-between text-xs">
+					{item.label}
+				</div>
 			)}
 		</Link>
 	)
@@ -161,12 +173,9 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
 	/**
 	 * activate the menuitems
 	 */
-	const activeMenu = useCallback(() => {	
-		const trimmedURL = location?.pathname?.replaceAll(
-			"",
-			''
-		)
-		const matchingMenuItem = getMenuItemFromURL(menuItems, trimmedURL);
+	const activeMenu = useCallback(() => {
+		const trimmedURL = location?.pathname?.replaceAll('', '')
+		const matchingMenuItem = getMenuItemFromURL(menuItems, trimmedURL)
 
 		if (matchingMenuItem) {
 			const activeMt = findMenuItem(menuItems, matchingMenuItem.key)
@@ -177,7 +186,7 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
 				])
 			}
 		}
-		}, [location.pathname, menuItems])
+	}, [location.pathname, menuItems])
 
 	useEffect(() => {
 		if (menuItems && menuItems.length > 0) activeMenu()
@@ -185,7 +194,7 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
 
 	return (
 		<ul
-			className="navbar-nav flex gap-x-3 items-center justify-center"
+			className="navbar-nav flex gap-x-1 items-center justify-center"
 			ref={menuRef}
 			id="main-side-menu"
 		>
@@ -197,13 +206,15 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
 								item={item}
 								toggleMenu={toggleMenu}
 								activeMenuItems={activeMenuItems}
-								linkClassName="nav-link"
+								linkClassName="nav-link "
 								subMenuClassNames=""
 							/>
 						) : (
 							<MenuItem
 								item={item}
-								linkClassName={`${activeMenuItems.includes(item.key) ? 'active' : ''}`}
+								linkClassName={`${
+									activeMenuItems.includes(item.key) ? 'active' : ''
+								} text-[8px]`}
 								className={'nav-item'}
 							/>
 						)}

@@ -69,7 +69,7 @@ const MENU_ITEMS: MenuItemTypes[] = [
 	},
 	{
 		key: 'needs',
-		label: 'Таньд хэрэгтэй',
+		label: 'Танд хэрэгтэй',
 		isTitle: true,
 		url: '/',
 	},
@@ -104,7 +104,6 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
 		key: 'merchant',
 		label: 'Мерчант',
 		isTitle: true,
-		parentKey: 'additional',
 		children: [
 			{
 				key: 'merchant-request',
@@ -128,7 +127,7 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
 	},
 	{
 		key: 'needs',
-		label: 'Таньд хэрэгтэй',
+		label: 'Танд хэрэгтэй',
 		isTitle: true,
 		url: '/',
 	},

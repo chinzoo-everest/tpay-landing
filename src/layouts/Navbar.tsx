@@ -14,7 +14,8 @@ import VerticalMenu from './VerticalMenu'
 import { OffcanvasLayout } from '@/components'
 
 const Navbar = () => {
-	const [isOpenOffcanvas, toggleOffcanvas, closeOffcanvas] = useToggle(false)
+	const [isOpenOffcanvas, toggleOffcanvas, openOffcanvas, closeOffcanvas] =
+		useToggle(false)
 	const { t } = useTranslation()
 	const location = useLocation()
 
@@ -51,14 +52,14 @@ const Navbar = () => {
 							<AppMenu menuItems={getHorizontalMenuItems(t)} />
 						</div>
 						<div className="hidden lg:flex items-center ms-3 gap-2">
-							<button className="bg-primary text-white px-4 py-2 rounded inline-flex items-center text-sm">
+							<button className="bg-primary text-white px-4 py-2 rounded inline-flex items-center text-xs">
 								{t('menu.investor')}
 							</button>
 							<LanguageSwitcher />
 						</div>
 						<div className="lg:hidden flex items-center ms-auto px-2.5">
-							<button type="button" onClick={toggleOffcanvas}>
-								<i className="fa-solid fa-bars text-2xl text-gray-500" />
+							<button type="button" onClick={openOffcanvas}>
+								<i className="fa-solid fa-bars text-lg text-gray-500" />
 							</button>
 						</div>
 					</nav>

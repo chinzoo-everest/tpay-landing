@@ -4,7 +4,7 @@
 
 import tpay3 from '@/assets/images/tpay/tpay3.jpg'
 import tpay5 from '@/assets/images/tpay/tpay5.png'
-import tpay2 from '@/assets/images/tpay/tpay2.jpg'
+import tpay2 from '@/assets/images/tpay/tpay2.png'
 
 import { Feature, Feature2 } from './types'
 
