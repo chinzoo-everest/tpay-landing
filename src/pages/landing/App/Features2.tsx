@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 
 import google from '@/assets/images/buttons/google.png'
 import store from '@/assets/images/buttons/store.png'
+import app_qr from '@/assets/images/tpay/app_qr.png'
 
 const Features2 = () => {
 	const { t } = useTranslation()
@@ -47,6 +48,12 @@ const Features2 = () => {
 						<Link to="https://apps.apple.com/mn/app/tpaymn/id6741140542">
 							<img src={store} className="w-48" />
 						</Link>
+					</div>
+
+					<div className="flex flex-wrap items-center justify-center gap-4 mb-10">
+						<div className="w-32 md:w-48 lg:w-52">
+							<img src={app_qr} className="w-full max-w-full h-auto" />
+						</div>
 					</div>
 				</div>
 				<div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mt-16">

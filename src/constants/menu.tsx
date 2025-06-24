@@ -44,6 +44,7 @@ const MENU_ITEMS: MenuItemTypes[] = [
 	{
 		key: 'merchant',
 		label: 'Мерчант',
+		isTitle: true,
 		parentKey: 'additional',
 		children: [
 			{
@@ -67,8 +68,8 @@ const MENU_ITEMS: MenuItemTypes[] = [
 		url: '/kiosk-map',
 	},
 	{
-		key: 'investor',
-		label: 'TPay for investor',
+		key: 'needs',
+		label: 'Таньд хэрэгтэй',
 		isTitle: true,
 		url: '/',
 	},
@@ -126,8 +127,8 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
 		url: '/kiosk-map',
 	},
 	{
-		key: 'investor',
-		label: 'TPay for investor',
+		key: 'needs',
+		label: 'Таньд хэрэгтэй',
 		isTitle: true,
 		url: '/',
 	},

@@ -34,15 +34,15 @@
 		},
 		"payLater": {
 			"title": "Pay Later",
-			"description": "Pay in up to 7 installments with no interest for selected period"
+			"description": "Choose your term and pay in installments without interest or fees."
 		},
 		"reward": {
 			"title": "Rewards",
-			"description": "Pay on time and increase your purchase limit"
+			"description": "Increase your purchase credit eligibility by paying on time"
 		},
 		"flexible": {
 			"title": "Flexible",
-			"description": "Choose your own payment period with no interest or fees"
+			"description": "Ability to divide and use your purchase rights as you wish"
 		}
 	},
 	"features2": {
@@ -104,6 +104,7 @@
 		"merchantRequest": "Apply as Merchant",
 		"merchants": "Merchants",
 		"atmLocations": "ATM Locations",
+		"needs": "Your needs",
 		"investor": "TPay for Investor"
 	},
 	"footer": {

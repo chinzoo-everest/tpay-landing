@@ -22,44 +22,46 @@ const Footer = () => {
 						</p>
 					</div>
 					<div className="xl:col-span-4 col-span-5 xl:mx-10">
-						<div className="flex flex-col sm:flex-row gap-14 flex-wrap justify-between">
-							<div>
-								<div className="flex flex-col gap-3">
-									<h5 className="mb-3">{t('footer.products')}</h5>
-									<div className="text-gray-500/80">
-										<Link to="/">{t('footer.atmLoan')}</Link>
+						<div className="flex flex-col lg:flex-row gap-8">
+							<div className="flex flex-col lg:flex-row gap-10 flex-wrap justify-between">
+								<div>
+									<div className="flex flex-col gap-3">
+										<h5 className="mb-3">{t('footer.products')}</h5>
+										<div className="text-gray-500/80">
+											<Link to="/">{t('footer.atmLoan')}</Link>
+										</div>
+										<div className="text-gray-500/80">
+											<Link to="/">{t('footer.purchaseLoan')}</Link>
+										</div>
 									</div>
-									<div className="text-gray-500/80">
-										<Link to="/">{t('footer.purchaseLoan')}</Link>
+								</div>
+								<div>
+									<div className="flex flex-col gap-3">
+										<h5 className="mb-3">{t('footer.merchant')}</h5>
+										<div className="text-gray-500/80">
+											<Link to="">{t('footer.merchantRequest')}</Link>
+										</div>
+										<div className="text-gray-500/80">
+											<Link to="">{t('footer.merchants')}</Link>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div className="flex flex-col gap-3">
+										<h5 className="mb-3">{t('footer.other')}</h5>
+										<div className="text-gray-500/80">
+											<Link to="">{t('footer.additionalServices')}</Link>
+										</div>
+										<div className="text-gray-500/80">
+											<Link to="/kiosk-map">{t('footer.atmLocations')}</Link>
+										</div>
+										<div className="text-gray-500/80">
+											<Link to="">{t('footer.forInvestor')}</Link>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div>
-								<div className="flex flex-col gap-3">
-									<h5 className="mb-3">{t('footer.merchant')}</h5>
-									<div className="text-gray-500/80">
-										<Link to="">{t('footer.merchantRequest')}</Link>
-									</div>
-									<div className="text-gray-500/80">
-										<Link to="">{t('footer.merchants')}</Link>
-									</div>
-								</div>
-							</div>
-							<div>
-								<div className="flex flex-col gap-3">
-									<h5 className="mb-3">{t('footer.other')}</h5>
-									<div className="text-gray-500/80">
-										<Link to="">{t('footer.additionalServices')}</Link>
-									</div>
-									<div className="text-gray-500/80">
-										<Link to="/kiosk-map">{t('footer.atmLocations')}</Link>
-									</div>
-									<div className="text-gray-500/80">
-										<Link to="">{t('footer.forInvestor')}</Link>
-									</div>
-								</div>
-							</div>
-							<div className="flex flex-col gap-3">
+							<div className="flex flex-col gap-3 lg:ml-auto">
 								<div className="flex flex-col gap-3">
 									<h5 className="mb-3">{t('footer.contact')}</h5>
 									<div className="text-gray-500/80">
@@ -151,17 +153,6 @@ const Footer = () => {
 									</div>
 								</div>
 							</div>
-							{/* <div>
-								<div className="flex flex-col gap-3">
-									<h5 className="mb-3">Languages</h5>
-									<div className="text-gray-500/80">
-										<Link to="">Francais</Link>
-									</div>
-									<div className="text-gray-500/80">
-										<Link to="">English</Link>
-									</div>
-								</div>
-							</div> */}
 						</div>
 					</div>
 				</div>

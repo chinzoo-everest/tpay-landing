@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 //images
 import whiteWave from '@/assets/images/shapes/white-wave.svg'
 import { Link } from 'react-router-dom'
+import tpay_logo_mini from '@/assets/images/tpay/tpay_logo_mini.png'
 
 interface TestimonialProps {
 	question: string
@@ -14,7 +15,12 @@ const CommonSlide = ({ question, description }: TestimonialProps) => {
 	return (
 		<div className="p-10 bg-white">
 			<p className="text-slate-800 text-lg">{question}</p>
-			<p className="text-slate-800/8 mt-2">{description}</p>
+			<div className="flex flex-row gap-4 mt-5 items-start">
+				<div className="w-10 h-10 flex-shrink-0">
+					<img src={tpay_logo_mini} className="w-full h-full object-contain" />
+				</div>
+				<p className="text-slate-800/8 mt-2">{description}</p>
+			</div>
 			{/* <div className="flex items-center justify-between mt-5">
 				<div className="flex items-center gap-3">
 					<div>

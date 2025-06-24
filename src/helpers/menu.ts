@@ -40,7 +40,7 @@ const getMenuLabel = (key: string, t: any): string => {
 		'merchant-request': t('menu.merchantRequest'),
 		merchants: t('menu.merchants'),
 		'amt-location': t('menu.atmLocations'),
-		investor: t('menu.investor'),
+		needs: t('menu.needs'),
 	}
 
 	return menuKeys[key] || key

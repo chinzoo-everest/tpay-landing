@@ -51,10 +51,10 @@ const Navbar = () => {
 							<AppMenu menuItems={getHorizontalMenuItems(t)} />
 						</div>
 						<div className="hidden lg:flex items-center ms-3 gap-2">
+							<button className="bg-primary text-white px-4 py-2 rounded inline-flex items-center text-sm">
+								{t('menu.investor')}
+							</button>
 							<LanguageSwitcher />
-							{/* <button className="bg-primary text-white px-4 py-2 rounded inline-flex items-center text-sm">
-								{t('common.download')}
-							</button> */}
 						</div>
 						<div className="lg:hidden flex items-center ms-auto px-2.5">
 							<button type="button" onClick={toggleOffcanvas}>
@@ -85,11 +85,12 @@ const Navbar = () => {
 						<VerticalMenu menuItems={getMenuItems(t)} />
 					</div>
 					{/* Mobile Menu Download Button (Footer) */}
-					{/* <div className="p-6 flex items-center justify-center">
+					<div className="p-6 flex items-center justify-center">
+						<LanguageSwitcher />
 						<button className="bg-primary w-full text-white p-3 rounded flex items-center justify-center text-sm">
-							{t('common.download')}
+							{t('menu.investor')}
 						</button>
-					</div> */}
+					</div>
 				</div>
 			</OffcanvasLayout>
 		</>
